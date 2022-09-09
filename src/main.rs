@@ -85,7 +85,7 @@ fn main() {
                 ["GT"] => {
                     let a = vector.pop().unwrap();
                     let b = vector.pop().unwrap();
-                    if a > b {
+                    if a < b {
                         vector.push(1.0);
                     } else {
                         vector.push(0.0);
@@ -95,7 +95,7 @@ fn main() {
                 ["LT"] => {
                     let a = vector.pop().unwrap();
                     let b = vector.pop().unwrap();
-                    if a < b {
+                    if a > b {
                         vector.push(1.0);
                     } else {
                         vector.push(0.0);
@@ -105,7 +105,7 @@ fn main() {
                 ["GTE"] => {
                     let a = vector.pop().unwrap();
                     let b = vector.pop().unwrap();
-                    if a >= b {
+                    if a <= b {
                         vector.push(1.0);
                     } else {
                         vector.push(0.0);
@@ -115,7 +115,7 @@ fn main() {
                 ["LTE"] => {
                     let a = vector.pop().unwrap();
                     let b = vector.pop().unwrap();
-                    if a <= b {
+                    if a >= b {
                         vector.push(1.0);
                     } else {
                         vector.push(0.0);
