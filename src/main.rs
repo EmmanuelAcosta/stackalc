@@ -11,9 +11,6 @@ fn main() {
         //Save each line into vector
         let line_str = line.unwrap();
 
-
-
-
         // split the line into floats
         for instruccion in line_str.split_whitespace() {
             let vectorInstruccion = instruccion.split(":").collect::<Vec<&str>>();
@@ -56,18 +53,11 @@ fn main() {
                 ["OR"] => {
                     let a = vector.pop().unwrap();
                     let b = vector.pop().unwrap();
-                    if a != 0.0 && b != 0.0 && !a.is_nan() && !b.is_nan() {
-                        if a < b {
-                            vector.push(a);
-                        } else {
-                            vector.push(b);
-                        }
-                    } else if a == 0.0 && b == 0.0 {
-                        vector.push(0.0);
-                    } else if a == 0.0 && !b.is_nan() {
-                        vector.push(b);
-                    } else if b == 0.0 && !a.is_nan() {
+                    // push the first element if it is not 0 or NaN, else verify the second element
+                    if a != 0.0 && !a.is_nan() {
                         vector.push(a);
+                    } else if b != 0.0 && !b.is_nan() {
+                        vector.push(b);
                     } else {
                         vector.push(0.0);
                     }
