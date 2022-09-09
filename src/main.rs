@@ -62,6 +62,12 @@ fn main() {
                         } else {
                             vector.push(b);
                         }
+                    } else if a == 0.0 && b == 0.0 {
+                        vector.push(0.0);
+                    } else if a == 0.0 && !b.is_nan() {
+                        vector.push(b);
+                    } else if b == 0.0 && !a.is_nan() {
+                        vector.push(a);
                     } else {
                         vector.push(0.0);
                     }
